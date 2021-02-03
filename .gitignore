@@ -1,0 +1,7 @@
+/.babelrc
+/.env
+/.mocharc.yaml
+/config
+/node_modules
+/package-lock.json
+/package.json

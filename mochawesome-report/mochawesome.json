@@ -1,0 +1,236 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-03T04:56:19.685Z",
+    "end": "2021-02-03T04:56:25.090Z",
+    "duration": 5405,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e9801534-3dc4-4191-9c59-68f693b60881",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "34450145-0c1b-44cf-83c4-f59af33fa100",
+          "title": "User",
+          "fullFile": "C:\\Users\\zeedy\\Downloads\\JavaScript-API-Automation-Tests-master\\super-api-tests\\test\\user2.js",
+          "file": "\\test\\user2.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "81c6147c-2fb9-4fe0-81a0-10ed8b3fb4f0",
+              "title": "Post",
+              "fullFile": "C:\\Users\\zeedy\\Downloads\\JavaScript-API-Automation-Tests-master\\super-api-tests\\test\\user2.js",
+              "file": "\\test\\user2.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "/users",
+                  "fullTitle": "User Post /users",
+                  "timedOut": false,
+                  "duration": 1375,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "//use ( .only ) to run just this test\nvar dataSend = {\n  //id 1488\n  email: \"example-\".concat(Math.floor(Math.random() * 1000), \"@hotmail.com\"),\n  name: \"TOM & Jerry\",\n  gender: \"Male\",\n  status: \"Active\"\n};\nreturn _common[\"default\"].post(\"users\").set(\"Authorization\", \"Bearer \".concat(Token)).send(dataSend).then(function (res) {\n  console.log(res.body);\n  (0, _chai.expect)(res.body.code).to.be.eq(201);\n  (0, _chai.expect)(res.body.data.gender).to.be.eq(\"Male\");\n  (0, _chai.expect)(res.body.data.status).to.be.eq(\"Active\");\n  grabId = res.body.data.id;\n});",
+                  "err": {},
+                  "uuid": "2709619a-45da-42e3-b84f-1a6ba25683d6",
+                  "parentUUID": "81c6147c-2fb9-4fe0-81a0-10ed8b3fb4f0",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "2709619a-45da-42e3-b84f-1a6ba25683d6"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1375,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 3000
+            },
+            {
+              "uuid": "90856c0f-5817-4e72-a946-f19fd3797656",
+              "title": "Get",
+              "fullFile": "C:\\Users\\zeedy\\Downloads\\JavaScript-API-Automation-Tests-master\\super-api-tests\\test\\user2.js",
+              "file": "\\test\\user2.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "/usres/:id",
+                  "fullTitle": "User Get /usres/:id",
+                  "timedOut": false,
+                  "duration": 1289,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "return _common[\"default\"].get(\"users/\".concat(grabId, \"?access-token=\").concat(Token)).then(function (res) {\n  (0, _chai.expect)(res.body.code).to.be.eq(200);\n  console.log(res.body);\n});",
+                  "err": {},
+                  "uuid": "f34b6523-6612-44c0-a0da-d42b933f14fd",
+                  "parentUUID": "90856c0f-5817-4e72-a946-f19fd3797656",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f34b6523-6612-44c0-a0da-d42b933f14fd"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1289,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 3000
+            },
+            {
+              "uuid": "4336357f-b19d-4ad3-b7d5-40d659659925",
+              "title": "Put",
+              "fullFile": "C:\\Users\\zeedy\\Downloads\\JavaScript-API-Automation-Tests-master\\super-api-tests\\test\\user2.js",
+              "file": "\\test\\user2.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "/user/:id",
+                  "fullTitle": "User Put /user/:id",
+                  "timedOut": false,
+                  "duration": 1248,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var data = {\n  name: \"Pallosh \".concat(Math.floor(Math.random() * 1000)),\n  status: \"Active\",\n  gender: \"Female\"\n};\nreturn _common[\"default\"].put(\"users/\".concat(grabId)).set(\"Authorization\", \"Bearer \".concat(Token)).send(data).then(function (res) {\n  console.log(res.body);\n});",
+                  "err": {},
+                  "uuid": "061a94f1-8f20-416c-b4bc-48016d050e41",
+                  "parentUUID": "4336357f-b19d-4ad3-b7d5-40d659659925",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "061a94f1-8f20-416c-b4bc-48016d050e41"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1248,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 3000
+            },
+            {
+              "uuid": "e2a1c836-f774-4b3e-99e3-276f5957b291",
+              "title": "Delete",
+              "fullFile": "C:\\Users\\zeedy\\Downloads\\JavaScript-API-Automation-Tests-master\\super-api-tests\\test\\user2.js",
+              "file": "\\test\\user2.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "/user/:id",
+                  "fullTitle": "User Delete /user/:id",
+                  "timedOut": false,
+                  "duration": 1380,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "return _common[\"default\"][\"delete\"](\"users/\".concat(grabId)).set(\"Authorization\", \"Bearer \".concat(Token)).then(function (res) {\n  if ((0, _chai.expect)(res.body.data).is.eq(null)) {\n    console.log('User has been deleted successfully.');\n  }\n  (0, _chai.expect)(res.body.data).to.be.eq(null);\n  (0, _chai.expect)(res.body.code).to.be.eq(204);\n});",
+                  "err": {},
+                  "uuid": "9cdcb2f1-f86d-48c6-9f60-8e67c923eac3",
+                  "parentUUID": "e2a1c836-f774-4b3e-99e3-276f5957b291",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9cdcb2f1-f86d-48c6-9f60-8e67c923eac3"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1380,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 3000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 3000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 3000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.1.0"
+    }
+  }
+}
